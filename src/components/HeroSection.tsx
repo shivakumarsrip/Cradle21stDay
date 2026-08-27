@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
         </h1>
 
         <p className="font-serif text-sm sm:text-lg font-bold text-gold-800 uppercase tracking-widest mt-1">
-          Prem & Sravya&apos;s Son
+          Sravya &amp; Prem Kumar&apos;s Son
         </p>
 
         {/* Telugu Main Event Title */}

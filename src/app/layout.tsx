@@ -31,14 +31,14 @@ const notoTelugu = Noto_Serif_Telugu({
 });
 
 export const metadata: Metadata = {
-  title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
+  title: "Sravya & Prem Kumar's Son's Cradle & Naming Ceremony | 29 August 2026",
   description:
-    "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
+    "With joy and blessings, we invite you to celebrate Sravya & Prem Kumar's son's Cradle & Naming Ceremony on Saturday, 29 August 2026 at MSR Gardens, Kattangur.",
   metadataBase: new URL("https://cradle-and-naming-ceremony.vercel.app"),
   openGraph: {
-    title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
+    title: "Sravya & Prem Kumar's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
-      "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
+      "With joy and blessings, we invite you to celebrate Sravya & Prem Kumar's son's Cradle & Naming Ceremony on Saturday, 29 August 2026 at MSR Gardens, Kattangur.",
     url: "https://cradle-and-naming-ceremony.vercel.app",
     siteName: "Cradle & Naming Ceremony Invitation",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 675,
         type: "image/jpeg",
-        alt: "Prem & Sravya's Son's Cradle & Naming Ceremony Invitation - 29 August 2026",
+        alt: "Sravya & Prem Kumar's Son's Cradle & Naming Ceremony Invitation - Saturday, 29 August 2026",
       },
     ],
     locale: "en_IN",
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
+    title: "Sravya & Prem Kumar's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
-      "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
+      "With joy and blessings, we invite you to celebrate Sravya & Prem Kumar's son's Cradle & Naming Ceremony on Saturday, 29 August 2026 at MSR Gardens, Kattangur.",
     images: ["https://cradle-and-naming-ceremony.vercel.app/images/og_image.jpg"],
   },
   keywords: [

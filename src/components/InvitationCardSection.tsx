@@ -44,7 +44,7 @@ export const InvitationCardSection: React.FC = () => {
                 With the love of Parents
               </span>
               <h3 className="font-serif text-xl sm:text-3xl font-bold text-indigoaccent-900 tracking-wide uppercase">
-                Kolloku Prem Kumar & Sravya
+                Kolloju Sravya & Prem Kumar
               </h3>
             </div>
           </div>
