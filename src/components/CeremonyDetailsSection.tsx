@@ -101,13 +101,51 @@ export const CeremonyDetailsSection: React.FC = () => {
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gold-bg-gradient text-white font-serif text-sm font-bold tracking-wider uppercase shadow-md hover:shadow-lg hover:brightness-105 active:scale-[0.99] transition-all focus:outline-none focus:ring-2 focus:ring-gold-500"
+                  style={{
+                    backgroundColor: "#1E3A4C",
+                    color: "#FAF0D7",
+                    border: "1.5px solid #C5A059",
+                    boxShadow: "0 4px 14px rgba(30, 58, 76, 0.25)",
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-serif text-sm font-bold tracking-wider uppercase shadow-md hover:bg-gold-700 hover:text-white active:scale-[0.99] transition-all focus:outline-none focus:ring-2 focus:ring-gold-500 cursor-pointer"
                 >
-                  <MapPin className="w-4 h-4" />
-                  <span>View Location</span>
-                  <ExternalLink className="w-3.5 h-3.5 opacity-80" />
+                  <MapPin className="w-4 h-4 text-gold-400" />
+                  <span className="font-bold tracking-widest">Open Location Map</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-gold-400" />
                 </a>
               </div>
+            </div>
+          </div>
+
+          {/* Interactive Embedded Google Map Section */}
+          <div className="mt-8 pt-6 border-t border-gold-200/80">
+            <div className="flex items-center justify-between mb-3 px-1">
+              <span className="text-xs font-serif font-bold text-indigoaccent-900 uppercase tracking-wider flex items-center gap-1.5">
+                <MapPin className="w-4 h-4 text-gold-600" />
+                Venue Map Location
+              </span>
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-sans text-gold-700 hover:text-gold-800 font-semibold underline flex items-center gap-1"
+              >
+                Open in Maps App <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-xl overflow-hidden border border-gold-300/80 shadow-sm bg-ivory-100">
+              <iframe
+                title="MSR Gardens Venue Map Location"
+                src="https://maps.google.com/maps?q=MSR%20Gardens%2C%20Eduloor%20Road%2C%20Kattangur&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full rounded-xl"
+              />
             </div>
           </div>
         </div>
@@ -115,4 +153,3 @@ export const CeremonyDetailsSection: React.FC = () => {
     </section>
   );
 };
-

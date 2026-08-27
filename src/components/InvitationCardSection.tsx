@@ -16,18 +16,31 @@ export const InvitationCardSection: React.FC = () => {
             With immense joy and the blessings of our elders,
           </p>
 
-          {/* Hosts / Maternal Grandparents */}
-          <div className="my-6">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gold-800 tracking-wide uppercase">
-              Sripada Lalitha & Nanda Kumar
-            </h3>
-            <p className="font-sans text-xs sm:text-sm font-semibold tracking-widest text-sandalwood-500 uppercase mt-1">
-              (Maternal Grandparents)
-            </p>
+          {/* Main Inviter & Parents Section */}
+          <div className="my-6 space-y-5">
+            {/* Maternal Grandparents / Hosts */}
+            <div>
+              <span className="text-xs font-sans font-semibold tracking-widest text-sandalwood-500 uppercase block mb-1">
+                Invited by (Maternal Grandparents)
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-gold-800 tracking-wide uppercase">
+                Sripada Lalitha & Nanda Kumar
+              </h3>
+            </div>
+
+            {/* Parents (Now Prominent & Large) */}
+            <div className="pt-3 border-t border-gold-300/40">
+              <span className="text-xs font-sans font-semibold tracking-widest text-sandalwood-500 uppercase block mb-1">
+                With the love of Parents
+              </span>
+              <h3 className="font-serif text-xl sm:text-3xl font-bold text-indigoaccent-900 tracking-wide uppercase">
+                Kolloku Prem Kumar & Sravya
+              </h3>
+            </div>
           </div>
 
           <p className="font-display italic text-sm sm:text-base text-indigoaccent-900/80 my-4 max-w-lg mx-auto">
-            cordially invite you and your family to bless their beloved grandson and celebrate his
+            cordially invite you and your family to bless their beloved baby boy and celebrate his
           </p>
 
           {/* Main Event Name Banner */}
@@ -42,14 +55,14 @@ export const InvitationCardSection: React.FC = () => {
 
           <OrnamentalDivider variant="lotus" className="my-6" />
 
-          {/* Family Hierarchy Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-gold-300/40 text-center">
+          {/* Supporting Family Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-gold-300/40 text-center">
             {/* Paternal Grandparents */}
-            <div className="space-y-1">
+            <div className="space-y-1 sm:border-r border-gold-300/40 sm:pr-4">
               <span className="text-[11px] font-sans font-semibold text-sandalwood-500 tracking-wider uppercase block">
                 With the blessings of
               </span>
-              <h4 className="font-serif text-base font-bold text-indigoaccent-900">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900">
                 Kolloju Rama & Raghu Chary
               </h4>
               <p className="text-xs font-medium text-sandalwood-500 italic">
@@ -57,25 +70,12 @@ export const InvitationCardSection: React.FC = () => {
               </p>
             </div>
 
-            {/* Parents */}
-            <div className="space-y-1 sm:border-x border-gold-300/40 sm:px-2">
-              <span className="text-[11px] font-sans font-semibold text-sandalwood-500 tracking-wider uppercase block">
-                With the love of
-              </span>
-              <h4 className="font-serif text-base font-bold text-indigoaccent-900">
-                Kolloku Prem Kumar & Sravya
-              </h4>
-              <p className="text-xs font-medium text-sandalwood-500 italic">
-                Parents
-              </p>
-            </div>
-
             {/* Mena Maama */}
-            <div className="space-y-1">
+            <div className="space-y-1 sm:pl-4">
               <span className="text-[11px] font-sans font-semibold text-sandalwood-500 tracking-wider uppercase block">
                 Mena Maama
               </span>
-              <h4 className="font-serif text-base font-bold text-indigoaccent-900">
+              <h4 className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900">
                 Sripada Shivakumar
               </h4>
               <p className="text-xs font-medium text-sandalwood-500 italic">

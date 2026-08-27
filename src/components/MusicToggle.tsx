@@ -5,117 +5,96 @@ import { Volume2, VolumeX } from "lucide-react";
 
 export const MusicToggle: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioCtxRef = useRef<AudioContext | null>(null);
-  const oscillatorsRef = useRef<OscillatorNode[]>([]);
-  const gainNodeRef = useRef<GainNode | null>(null);
-
-  // Soothing traditional Indian flute frequencies (Mohanam Raga notes: S R2 G3 P D2 S')
-  const notes = [293.66, 329.63, 369.99, 440.0, 493.88, 587.33];
-
-  const stopAudio = () => {
-    oscillatorsRef.current.forEach((osc) => {
-      try {
-        osc.stop();
-        osc.disconnect();
-      } catch {
-        // ignore
-      }
-    });
-    oscillatorsRef.current = [];
-
-    if (gainNodeRef.current && audioCtxRef.current) {
-      gainNodeRef.current.gain.setTargetAtTime(0, audioCtxRef.current.currentTime, 0.1);
-    }
-  };
-
-  const startAudio = () => {
-    try {
-      const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-      if (!audioCtxRef.current) {
-        audioCtxRef.current = new AudioCtx();
-      }
-
-      if (audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume();
-      }
-
-      const ctx = audioCtxRef.current;
-      stopAudio();
-
-      const masterGain = ctx.createGain();
-      masterGain.gain.setValueAtTime(0.01, ctx.currentTime);
-      masterGain.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 2);
-      masterGain.connect(ctx.destination);
-      gainNodeRef.current = masterGain;
-
-      // Play soft soothing ambient chords mimicking acoustic bamboo flute sound
-      const baseFreqs = [notes[0], notes[2], notes[3]];
-      baseFreqs.forEach((freq, i) => {
-        const osc = ctx.createOscillator();
-        const oscGain = ctx.createGain();
-
-        osc.type = "sine";
-        osc.frequency.setValueAtTime(freq, ctx.currentTime);
-
-        // Soft subtle tremolo/vibrato for flute feel
-        const lfo = ctx.createOscillator();
-        const lfoGain = ctx.createGain();
-        lfo.frequency.setValueAtTime(4.5 + i * 0.5, ctx.currentTime);
-        lfoGain.gain.setValueAtTime(2.5, ctx.currentTime);
-        lfo.connect(osc.frequency);
-        lfo.start();
-
-        oscGain.gain.setValueAtTime(0.3 / (i + 1), ctx.currentTime);
-        osc.connect(oscGain);
-        oscGain.connect(masterGain);
-
-        osc.start();
-        oscillatorsRef.current.push(osc);
-      });
-    } catch {
-      // Audio playback fallback
-    }
-  };
-
-  const toggleMusic = () => {
-    if (isPlaying) {
-      stopAudio();
-      setIsPlaying(false);
-    } else {
-      startAudio();
-      setIsPlaying(true);
-    }
-  };
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const attemptedAutoplay = useRef(false);
 
   useEffect(() => {
+    // Initialize audio element with user uploaded file
+    const audio = new Audio("/audio/krishna_ringtone.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    audioRef.current = audio;
+
+    const startPlayback = () => {
+      if (audioRef.current && audioRef.current.paused) {
+        audioRef.current
+          .play()
+          .then(() => {
+            setIsPlaying(true);
+            removeInteractionListeners();
+          })
+          .catch(() => {
+            // Autoplay blocked by browser policy until user interaction
+          });
+      }
+    };
+
+    const removeInteractionListeners = () => {
+      window.removeEventListener("click", startPlayback);
+      window.removeEventListener("touchstart", startPlayback);
+      window.removeEventListener("pointerdown", startPlayback);
+      window.removeEventListener("scroll", startPlayback);
+    };
+
+    // Attempt immediate autoplay on site load
+    if (!attemptedAutoplay.current) {
+      attemptedAutoplay.current = true;
+      startPlayback();
+    }
+
+    // Attach interaction listeners to trigger playback on first tap/scroll if blocked on load
+    window.addEventListener("click", startPlayback, { once: true });
+    window.addEventListener("touchstart", startPlayback, { once: true });
+    window.addEventListener("pointerdown", startPlayback, { once: true });
+    window.addEventListener("scroll", startPlayback, { once: true });
+
     return () => {
-      stopAudio();
-      if (audioCtxRef.current && audioCtxRef.current.state !== "closed") {
-        audioCtxRef.current.close();
+      removeInteractionListeners();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
       }
     };
   }, []);
+
+  const toggleMusic = (e: React.MouseEvent) => {
+    e.stopPropagation(); // prevent triggering window click handler
+    if (!audioRef.current) return;
+
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.warn("Audio playback error:", err);
+        });
+    }
+  };
 
   return (
     <div className="fixed top-4 right-4 z-50">
       <button
         onClick={toggleMusic}
-        aria-label={isPlaying ? "Mute Background Music" : "Play Ambient Music"}
-        className="flex items-center gap-2 px-3 py-2 rounded-full bg-ivory-50/90 backdrop-blur-md border border-gold-400/50 shadow-md text-indigoaccent-900 hover:bg-gold-100 hover:border-gold-500 transition-all text-xs font-medium focus:outline-none focus:ring-2 focus:ring-gold-500"
+        aria-label={isPlaying ? "Mute Background Music" : "Play Background Music"}
+        className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-ivory-50/95 backdrop-blur-md border border-gold-400/70 shadow-md text-indigoaccent-900 hover:bg-gold-100 hover:border-gold-500 transition-all text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-gold-500 cursor-pointer"
       >
         {isPlaying ? (
           <>
             <Volume2 className="w-4 h-4 text-gold-600 animate-pulse" />
-            <span className="hidden sm:inline text-gold-700 font-serif">Music On</span>
+            <span className="hidden sm:inline text-gold-800 font-serif">Music Playing</span>
           </>
         ) : (
           <>
             <VolumeX className="w-4 h-4 text-sandalwood-500" />
-            <span className="hidden sm:inline text-sandalwood-500 font-serif">Music Off</span>
+            <span className="hidden sm:inline text-sandalwood-600 font-serif">Music Off</span>
           </>
         )}
       </button>
     </div>
   );
 };
-
