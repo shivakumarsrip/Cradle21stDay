@@ -50,7 +50,7 @@ export const ClosingSection: React.FC = () => {
 
         {/* Footer Credit / Subtle copyright */}
         <p className="text-[11px] font-sans text-sandalwood-400 mt-8 tracking-wider">
-          Cradle & Naming Ceremony • 29 August 2026 • MSR Gardens
+          Cradle & Naming Ceremony • Saturday, 29 August 2026 • MSR Gardens
         </p>
       </div>
     </section>

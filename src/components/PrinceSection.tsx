@@ -38,7 +38,7 @@ export const PrinceSection: React.FC = () => {
         </p>
 
         <p className="text-xs sm:text-sm font-sans font-semibold text-sandalwood-500 tracking-widest uppercase">
-          Born on 09 August 2026
+          Born on Sunday, 09 August 2026
         </p>
 
         <OrnamentalDivider variant="peacock" className="my-4" />

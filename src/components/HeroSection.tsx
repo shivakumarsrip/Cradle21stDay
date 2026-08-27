@@ -39,7 +39,7 @@ export const HeroSection: React.FC = () => {
         {/* Baby Date of Birth */}
         <div className="mt-2 inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/80 border border-gold-200 text-xs sm:text-sm font-semibold tracking-widest text-indigoaccent-800 uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
-          <span>09 August 2026</span>
+          <span>Sunday, 09 August 2026</span>
           <span className="w-1.5 h-1.5 rounded-full bg-gold-500" />
         </div>
       </div>

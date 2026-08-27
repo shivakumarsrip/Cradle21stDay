@@ -34,18 +34,20 @@ export const metadata: Metadata = {
   title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
   description:
     "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
-  metadataBase: new URL("https://cradle-naming-ceremony.vercel.app"),
+  metadataBase: new URL("https://cradle-and-naming-ceremony.vercel.app"),
   openGraph: {
     title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
       "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
-    url: "https://cradle-naming-ceremony.vercel.app",
+    url: "https://cradle-and-naming-ceremony.vercel.app",
     siteName: "Cradle & Naming Ceremony Invitation",
     images: [
       {
-        url: "/images/og_image.jpg",
+        url: "https://cradle-and-naming-ceremony.vercel.app/images/og_image.jpg",
+        secureUrl: "https://cradle-and-naming-ceremony.vercel.app/images/og_image.jpg",
         width: 1200,
         height: 675,
+        type: "image/jpeg",
         alt: "Prem & Sravya's Son's Cradle & Naming Ceremony Invitation - 29 August 2026",
       },
     ],
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
     title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
       "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
-    images: ["/images/og_image.jpg"],
+    images: ["https://cradle-and-naming-ceremony.vercel.app/images/og_image.jpg"],
   },
   keywords: [
     "Cradle Ceremony",
