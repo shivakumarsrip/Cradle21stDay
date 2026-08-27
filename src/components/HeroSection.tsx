@@ -17,7 +17,7 @@ export const HeroSection: React.FC = () => {
 
         {/* English Event Title */}
         <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-wider text-indigoaccent-900 uppercase leading-tight px-2 drop-shadow-sm">
-          Cradle & Naming Ceremony
+          Cradle & Name Reveal Ceremony
         </h1>
 
         <p className="font-serif text-sm sm:text-lg font-bold text-gold-800 uppercase tracking-widest mt-1">
@@ -26,7 +26,7 @@ export const HeroSection: React.FC = () => {
 
         {/* Telugu Main Event Title */}
         <h2 className="font-telugu text-xl sm:text-3xl text-gold-700 font-semibold my-1.5 px-2">
-          ఊయల మరియు నామకరణ మహోత్సవం
+          డోలారోహణ మహోత్సవం
         </h2>
 
         <OrnamentalDivider variant="lotus" className="my-3" />

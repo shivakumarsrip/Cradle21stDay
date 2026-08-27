@@ -56,10 +56,10 @@ export const InvitationCardSection: React.FC = () => {
           {/* Main Event Name Banner */}
           <div className="my-6 py-4 px-3 rounded-xl bg-gold-100/60 border border-gold-300/70 shadow-sm">
             <h2 className="font-serif text-xl sm:text-3xl font-bold text-indigoaccent-900 uppercase tracking-widest leading-snug">
-              Cradle & Naming Ceremony
+              Cradle &amp; Name Reveal Ceremony
             </h2>
             <p className="font-telugu text-lg sm:text-2xl font-bold text-gold-700 mt-1">
-              ఊయల మరియు నామకరణ మహోత్సవం
+              డోలారోహణ మహోత్సవం
             </p>
           </div>
 

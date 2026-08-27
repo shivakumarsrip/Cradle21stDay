@@ -7,6 +7,27 @@ export const MusicToggle: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const stopTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const start60sTimer = () => {
+    if (stopTimerRef.current) {
+      clearTimeout(stopTimerRef.current);
+    }
+    // Automatically stop music after 1 minute (60,000 ms)
+    stopTimerRef.current = setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    }, 60000);
+  };
+
+  const stop60sTimer = () => {
+    if (stopTimerRef.current) {
+      clearTimeout(stopTimerRef.current);
+      stopTimerRef.current = null;
+    }
+  };
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -21,6 +42,7 @@ export const MusicToggle: React.FC = () => {
           .then(() => {
             setIsPlaying(true);
             setShowPrompt(false);
+            start60sTimer();
             removeListeners();
           })
           .catch(() => {
@@ -48,6 +70,7 @@ export const MusicToggle: React.FC = () => {
 
     return () => {
       removeListeners();
+      stop60sTimer();
     };
   }, []);
 
@@ -59,12 +82,14 @@ export const MusicToggle: React.FC = () => {
     if (isPlaying) {
       audio.pause();
       setIsPlaying(false);
+      stop60sTimer();
     } else {
       audio
         .play()
         .then(() => {
           setIsPlaying(true);
           setShowPrompt(false);
+          start60sTimer();
         })
         .catch((err) => {
           console.warn("Audio play error:", err);
