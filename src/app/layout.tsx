@@ -31,22 +31,22 @@ const notoTelugu = Noto_Serif_Telugu({
 });
 
 export const metadata: Metadata = {
-  title: "Cradle & Naming Ceremony | 29 August 2026",
+  title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
   description:
-    "With joy and blessings, we invite you to celebrate the Cradle & Naming Ceremony of our little prince on 29 August 2026 at MSR Gardens, Kattangur.",
+    "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
   metadataBase: new URL("https://cradle-naming-ceremony.vercel.app"),
   openGraph: {
-    title: "Cradle & Naming Ceremony | 29 August 2026",
+    title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
-      "With joy and blessings, we invite you to celebrate the Cradle & Naming Ceremony of our little prince on 29 August 2026 at MSR Gardens, Kattangur.",
+      "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
     url: "https://cradle-naming-ceremony.vercel.app",
     siteName: "Cradle & Naming Ceremony Invitation",
     images: [
       {
-        url: "/images/hero_cradle.jpg",
+        url: "/images/og_image.jpg",
         width: 1200,
         height: 675,
-        alt: "Traditional South Indian Cradle & Naming Ceremony Invitation",
+        alt: "Prem & Sravya's Son's Cradle & Naming Ceremony Invitation - 29 August 2026",
       },
     ],
     locale: "en_IN",
@@ -54,10 +54,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cradle & Naming Ceremony | 29 August 2026",
+    title: "Prem & Sravya's Son's Cradle & Naming Ceremony | 29 August 2026",
     description:
-      "With joy and blessings, we invite you to celebrate the Cradle & Naming Ceremony of our little prince on 29 August 2026 at MSR Gardens, Kattangur.",
-    images: ["/images/hero_cradle.jpg"],
+      "With joy and blessings, we invite you to celebrate Prem & Sravya's son's Cradle & Naming Ceremony on 29 August 2026 at MSR Gardens, Kattangur.",
+    images: ["/images/og_image.jpg"],
   },
   keywords: [
     "Cradle Ceremony",

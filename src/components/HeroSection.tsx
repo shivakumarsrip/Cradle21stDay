@@ -20,8 +20,12 @@ export const HeroSection: React.FC = () => {
           Cradle & Naming Ceremony
         </h1>
 
+        <p className="font-serif text-sm sm:text-lg font-bold text-gold-800 uppercase tracking-widest mt-1">
+          Prem & Sravya&apos;s Son
+        </p>
+
         {/* Telugu Main Event Title */}
-        <h2 className="font-telugu text-xl sm:text-3xl text-gold-700 font-semibold my-2 px-2">
+        <h2 className="font-telugu text-xl sm:text-3xl text-gold-700 font-semibold my-1.5 px-2">
           ఊయల మరియు నామకరణ మహోత్సవం
         </h2>
 
