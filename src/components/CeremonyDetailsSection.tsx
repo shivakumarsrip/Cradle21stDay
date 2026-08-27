@@ -42,61 +42,58 @@ export const CeremonyDetailsSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {/* Date & Time Column */}
-            <div className="p-6 rounded-xl bg-ivory-50 border border-gold-200/80 flex flex-col justify-between space-y-4">
-              <div className="flex items-center justify-center md:justify-start gap-3 text-gold-700">
-                <div className="p-2 rounded-full bg-gold-100 border border-gold-300">
-                  <Calendar className="w-5 h-5" />
+            <div className="p-6 sm:p-8 rounded-xl bg-ivory-50 border border-gold-200/80 flex flex-col justify-between items-center text-center space-y-6">
+              {/* Date Section */}
+              <div className="flex flex-col items-center text-center w-full space-y-1.5">
+                <div className="p-2.5 rounded-full bg-gold-100 border border-gold-300 shadow-xs mb-1">
+                  <Calendar className="w-5 h-5 text-gold-700" />
                 </div>
-                <div>
-                  <span className="text-[11px] font-sans font-semibold tracking-wider text-sandalwood-500 uppercase block">
-                    Date
-                  </span>
-                  <span className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900 uppercase">
-                    Saturday, 29 August 2026
-                  </span>
-                </div>
+                <span className="text-[11px] font-sans font-semibold tracking-widest text-sandalwood-500 uppercase block">
+                  Date
+                </span>
+                <span className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900 uppercase">
+                  Saturday, 29 August 2026
+                </span>
               </div>
 
-              <div className="flex items-center justify-center md:justify-start gap-3 text-gold-700 pt-3 border-t border-gold-200/60">
-                <div className="p-2 rounded-full bg-gold-100 border border-gold-300">
-                  <Clock className="w-5 h-5" />
+              {/* Time Section */}
+              <div className="w-full pt-5 border-t border-gold-200/60 flex flex-col items-center text-center space-y-1.5">
+                <div className="p-2.5 rounded-full bg-gold-100 border border-gold-300 shadow-xs mb-1">
+                  <Clock className="w-5 h-5 text-gold-700" />
                 </div>
-                <div>
-                  <span className="text-[11px] font-sans font-semibold tracking-wider text-sandalwood-500 uppercase block">
-                    Time
-                  </span>
-                  <span className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900">
-                    12:00 PM (Noon)
-                  </span>
-                </div>
+                <span className="text-[11px] font-sans font-semibold tracking-widest text-sandalwood-500 uppercase block">
+                  Time
+                </span>
+                <span className="font-serif text-base sm:text-lg font-bold text-indigoaccent-900">
+                  12:00 PM (Noon)
+                </span>
               </div>
             </div>
 
             {/* Venue Column */}
-            <div className="p-6 rounded-xl bg-ivory-50 border border-gold-200/80 flex flex-col justify-between space-y-4">
-              <div className="flex items-start justify-center md:justify-start gap-3 text-gold-700">
-                <div className="p-2 rounded-full bg-gold-100 border border-gold-300 shrink-0 mt-1">
-                  <MapPin className="w-5 h-5" />
+            <div className="p-6 sm:p-8 rounded-xl bg-ivory-50 border border-gold-200/80 flex flex-col justify-between items-center text-center space-y-6">
+              {/* Venue Info Section */}
+              <div className="flex flex-col items-center text-center w-full space-y-1.5">
+                <div className="p-2.5 rounded-full bg-gold-100 border border-gold-300 shadow-xs mb-1">
+                  <MapPin className="w-5 h-5 text-gold-700" />
                 </div>
-                <div>
-                  <span className="text-[11px] font-sans font-semibold tracking-wider text-sandalwood-500 uppercase block">
-                    Venue
-                  </span>
-                  <h3 className="font-serif text-lg font-bold text-indigoaccent-900 uppercase">
-                    MSR Gardens
-                  </h3>
-                  <p className="font-sans text-sm text-indigoaccent-900/80 mt-1 leading-relaxed">
-                    Eduloor Road, Kattangur
-                    <br />
-                    Pin Code: 508205
-                  </p>
-                </div>
+                <span className="text-[11px] font-sans font-semibold tracking-widest text-sandalwood-500 uppercase block">
+                  Venue
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-indigoaccent-900 uppercase">
+                  MSR Gardens
+                </h3>
+                <p className="font-sans text-sm text-indigoaccent-900/80 leading-relaxed pt-0.5">
+                  Eduloor Road, Kattangur
+                  <br />
+                  Pin Code: 508205
+                </p>
               </div>
 
               {/* View Location Button */}
-              <div className="pt-3">
+              <div className="w-full pt-3">
                 <a
                   href={mapUrl}
                   target="_blank"
